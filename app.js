@@ -41,21 +41,29 @@ function validaIntento(){
         if(numeroUsuario == numeroSecreto){
             textos('h1',`LO ADIVINASTE`);
             textos('p',`Adivinaste el numero secreto lo lograste en ${intento} intentos`);
+            limpiarCaja();
+            generarNumero();
+            intento = '';
+            document.querySelector('#botonIntento').setAttribute('disabled','true')
         }else{
             if(numeroUsuario > numeroSecreto){
                 textos('h1',`FALLASTE`);
                 textos('p',`el numero es menor`);
                 intento++
+                textos('h3',`te quedan ${intento} intentos`)
             }else{
                 textos('h1',`FALLASTE`);
                 textos('p',`el numero es mayor`);
                 intento++
+                textos('h3',`${intento} de ${nivelDificultad} intentos`)
             }
         }
     }else{
         textos('h1','Fin Del Juego')
-        textos('p','no puedes usar mas intentos')
-        document.querySelector('#botonIntento').setAttribute('disabled','true');
+        textos('p','usaste el numero maximo de intentos posibles')
+        document.querySelector('#botonIntento').setAttribute('disabled','true')
+        textos('h3','');
+        document.querySelector('input').value = '';
         
     }
     
@@ -98,6 +106,9 @@ function dificultad(){
         }
     }
 
+}
+function limpiarCaja(){
+    document.querySelector('#numeroIngresado').value ='';
 }
 
 

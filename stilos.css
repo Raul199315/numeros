@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(77, 74, 74);
+}
+
+button{
+    border-radius: 15px;
+    background-color: rgb(74, 115, 161);
+    height: 70px;
+    width: 150px;
+    
+}
+input{
+    background-color: aquamarine;
+    height: 60px;
+    width: 50px;
+    font-size: 40px;
+}
+select{
+    height: 40px;
+    width: 65px;
+    font-size: 30px;
+}
